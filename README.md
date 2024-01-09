@@ -1,2 +1,2 @@
 # MIA-VSR
-Will coming soon!
+Will be coming soon!
