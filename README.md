@@ -8,3 +8,13 @@
 This repository is the official PyTorch implementation of "Video Super-Resolution Transformer with Masked Inter&Intra-Frame Attention"
 ([arxiv](https://arxiv.org/pdf/2206.02146.pdf))
 ## Will be coming soon!
+
+
+
+## Citation
+    @article{zhou2024video,
+    title={Video Super-Resolution Transformer with Masked Inter\&Intra-Frame Attention},
+    author={Zhou, Xingyu and Zhang, Leheng and Zhao, Xiaorui and Wang, Keze and Li, Leida and Gu, Shuhang},
+    journal={arXiv preprint arXiv:2401.06312},
+    year={2024}
+    }
