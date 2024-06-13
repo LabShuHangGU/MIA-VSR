@@ -67,6 +67,7 @@ bash dist_train.sh 8 options/4126_MIAVSR_mix_precision_REDS_600K_N1.yml
 bash dist_train.sh 8 options/5123_MIAVSR_mix_precision_Vimeo_300K_N10.yml
 ```
 We also provide the code for the IIAVSR without the adaptive masked processing module in archs/iia_vsr_arch.py.
+
 ## Results
 <p align="center">
   <img width="800" src="assets/Results.png">
