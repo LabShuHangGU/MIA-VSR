@@ -5,7 +5,6 @@
 [pretrained models](https://drive.google.com/drive/folders/1SyCIPlCZp4SkORMaUVKzT0M07nDAhdrl?usp=sharing)
 
 [![arXiv](https://img.shields.io/badge/arXiv-Paper-<COLOR>.svg)](https://arxiv.org/abs/2401.06312)
-![visitors](https://visitor-badge.glitch.me/badge?page_id=LabShuHangGU/MIA-VSR)
 [![GitHub Stars](https://img.shields.io/github/stars/LabShuHangGU/MIA-VSR?style=social)](https://github.com/LabShuHangGU/MIA-VSR)
 
 This repository is the official PyTorch implementation of "Video Super-Resolution Transformer with Masked Inter&Intra-Frame Attention"
