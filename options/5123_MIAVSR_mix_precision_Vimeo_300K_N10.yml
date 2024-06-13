@@ -1,0 +1,122 @@
+# general settings
+name: 5123_MIAVSR_mix_precision_Vimeo_300K_N10
+model_type: RecurrentMixPrecisionRTModel
+scale: 4
+num_gpu: 8  # official: 8 GPUs
+manual_seed: 0
+find_unused_parameters: false
+use_static_graph: true
+# dataset and data loader settings
+datasets:
+  train:
+    name: Vimeo90K
+    type: Vimeo90KRecurrentDataset
+    dataroot_gt: /data0/zhouxingyu/vimeo_septuplet/sequences
+    dataroot_lq: /data0/zhouxingyu/vimeo_septuplet/BIx4
+    meta_info_file: /data1/home/zhouxingyu/zhouxingyu_vsr/MIA-VSR/data/meta_info_Vimeo90K_train_GT.txt
+    io_backend:
+      type: disk
+
+    num_frame: -1
+    gt_size: 256
+    interval_list: [1]
+    random_reverse: false
+    use_hflip: true
+    use_rot: true
+    flip_sequence: True
+
+    # data loader
+    use_shuffle: true
+    num_worker_per_gpu: 6
+    batch_size_per_gpu: 3
+    dataset_enlarge_ratio: 200
+    prefetch_mode: ~
+
+  val:
+    name: Vid4
+    type: VideoRecurrentTestDataset
+    dataroot_gt: /data0/zhouxingyu/vid4-dataset-main/gt
+    dataroot_lq: /data0/zhouxingyu/vid4-dataset-main/vid4_LR/BIx4
+
+    cache_data: true
+    io_backend:
+      type: disk
+
+    num_frame: -1  # not needed
+
+# network structures
+network_g:
+  type: MIAVSR
+  mid_channels: 64
+  embed_dim: 120
+  depths: [6,6,6,6]
+  num_heads: [6,6,6,6]
+  window_size: [3, 8, 8]
+  num_frames: 3
+  img_size : 64
+  patch_size : 1
+  cpu_cache_length: 100
+  is_low_res_input: True
+  use_mask: True #False, may be you should pretrain this model with no mask processing module
+  spynet_path: experiments/pretrained_models/flownet/spynet_sintel_final-3d2a1287.pth
+
+# path
+path:
+  pretrain_network_g: ~
+  resume_state: ~
+
+# training settings
+train:
+  ema_decay: 0.999
+  optim_g:
+    type: Adam
+    lr: !!float 1e-4
+    weight_decay: 0
+    betas: [0.9, 0.99]
+
+  scheduler:
+    type: CosineAnnealingRestartLR
+    periods: [300000]
+    restart_weights: [1]
+    eta_min: !!float 1e-7
+
+  total_iter: 300000
+  warmup_iter: -1  # no warm up
+  fix_flow: -1
+  flow_lr_mul: 0.25
+  parsity_target: [0.7]
+  # losses
+  pixel_opt:
+    type: CharbonnierLoss
+    loss_weight: 1.0
+    reduction: mean
+  
+  sparsity_opt:
+    type: SparsityCriterion
+    parsity_target: [0.7]
+
+# validation settings
+val:
+  val_freq: !!float 5e3
+  save_img: false
+
+  metrics:
+    psnr: # metric name, can be arbitrary
+      type: calculate_psnr
+      crop_border: 0
+      test_y_channel: true
+
+# logging settings
+logger:
+  print_freq: 100
+  save_checkpoint_freq: !!float 5e3
+  use_tb_logger: true
+  wandb:
+    project: ~
+    resume_id: ~
+
+# dist training settings
+dist_params:
+  backend: nccl
+  port: 29500
+

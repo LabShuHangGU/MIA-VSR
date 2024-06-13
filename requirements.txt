@@ -1,0 +1,10 @@
+numpy
+opencv-python
+requests
+torch>=1.9.0
+torchvision>=0.10.0
+timm
+tqdm
+scikit-image
+scipy
+Pillow
