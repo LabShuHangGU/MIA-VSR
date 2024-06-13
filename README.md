@@ -1,5 +1,5 @@
 # Video Super-Resolution Transformer with Masked Inter&Intra-Frame Attention（CVPR 2024）
-[Xingyu Zhou](https://scholar.google.com/citations?user=dgO3CyMAAAAJ&hl=zh-CN&oi=sra), [Leheng Zhang](https://scholar.google.com/citations?user=DH1CJqkAAAAJ&hl=zh-CN), [Xiaorui Zhao], [Keze Wang](https://scholar.google.com/citations?hl=zh-CN&user=Qirk2fYAAAAJ), [Leida Li](https://scholar.google.com/citations?hl=zh-CN&user=xMvuFI8AAAAJ) and [Shuhang Gu](https://scholar.google.com/citations?hl=zh-CN&user=-kSTt40AAAAJ) <br>
+[Xingyu Zhou](https://scholar.google.com/citations?user=dgO3CyMAAAAJ&hl=zh-CN&oi=sra), [Leheng Zhang](https://scholar.google.com/citations?user=DH1CJqkAAAAJ&hl=zh-CN), Xiaorui Zhao, [Keze Wang](https://scholar.google.com/citations?hl=zh-CN&user=Qirk2fYAAAAJ), [Leida Li](https://scholar.google.com/citations?hl=zh-CN&user=xMvuFI8AAAAJ) and [Shuhang Gu](https://scholar.google.com/citations?hl=zh-CN&user=-kSTt40AAAAJ) <br>
 [arxiv](https://arxiv.org/pdf/2401.06312)
 **|**
 [pretrained models](https://drive.google.com/drive/folders/1SyCIPlCZp4SkORMaUVKzT0M07nDAhdrl?usp=sharing)
@@ -66,9 +66,8 @@ bash dist_train.sh 8 options/4126_MIAVSR_mix_precision_REDS_600K_N1.yml
 
 # video sr trained on Vimeo, validated on Vid4
 bash dist_train.sh 8 options/5123_MIAVSR_mix_precision_Vimeo_300K_N10.yml
-
-#We also provide the code for the IIAVSR without the adaptive masked processing module in archs/iia_vsr_arch.py.
 ```
+We also provide the code for the IIAVSR without the adaptive masked processing module in archs/iia_vsr_arch.py.
 ## Results
 <p align="center">
   <img width="800" src="assets/Results.png">
