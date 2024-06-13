@@ -1,5 +1,5 @@
 # Video Super-Resolution Transformer with Masked Inter&Intra-Frame Attention（CVPR 2024）
-[Xingyu Zhou](https://scholar.google.com/citations?user=dgO3CyMAAAAJ&hl=zh-CN&oi=sra), [Leheng Zhang](https://scholar.google.com/citations?user=DH1CJqkAAAAJ&hl=zh-CN), Xiaorui Zhao, [Keze Wang](https://scholar.google.com/citations?hl=zh-CN&user=Qirk2fYAAAAJ), [Leida Li](https://scholar.google.com/citations?hl=zh-CN&user=xMvuFI8AAAAJ) and [Shuhang Gu](https://scholar.google.com/citations?hl=zh-CN&user=-kSTt40AAAAJ) <br>
+[Xingyu Zhou](https://scholar.google.com/citations?user=dgO3CyMAAAAJ&hl=zh-CN&oi=sra), [Leheng Zhang](https://scholar.google.com/citations?user=DH1CJqkAAAAJ&hl=zh-CN), [Xiaorui Zhao](https://scholar.google.com/citations?view_op=list_works&hl=zh-CN&authuser=1&user=kiG_knoAAAAJ&gmla=AOAOcb0BKRCA24zlHooXxTCcVT-GviTGSKspWQKYk0UjgwMJrX6lPPMvFn19EPVzIxvZLjzdtdtBAFsVpzxcGiK0I4pKI9se2OinqAW2po3AwX7RO-HsWEMWapQ), [Keze Wang](https://scholar.google.com/citations?hl=zh-CN&user=Qirk2fYAAAAJ), [Leida Li](https://scholar.google.com/citations?hl=zh-CN&user=xMvuFI8AAAAJ) and [Shuhang Gu](https://scholar.google.com/citations?hl=zh-CN&user=-kSTt40AAAAJ) <br>
 [arxiv](https://arxiv.org/pdf/2401.06312)
 **|**
 [pretrained models](https://drive.google.com/drive/folders/1SyCIPlCZp4SkORMaUVKzT0M07nDAhdrl?usp=sharing)
