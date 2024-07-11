@@ -81,9 +81,8 @@ train:
 
   total_iter: 600000
   warmup_iter: -1  # no warm up
-  fix_flow: 5000
+  fix_flow: 5000 #-1 no fix flow
   flow_lr_mul: 0.125
-  #mask_lr_mul: 0
 
   # losses
   pixel_opt:
